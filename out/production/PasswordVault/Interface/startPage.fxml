@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.validation.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="221.0" prefWidth="374.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.startPageController">
+   <children>
+      <Pane prefHeight="229.0" prefWidth="374.0">
+         <children>
+            <JFXButton fx:id="createButton" buttonType="RAISED" layoutX="83.0" layoutY="168.0" minWidth="60.0" ripplerFill="WHITE" style="-fx-background-color: #E91E63;" text="Create" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Light" size="13.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="232.0" layoutY="168.0" minWidth="60.0" ripplerFill="WHITE" style="-fx-background-color: #E91E63;" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Light" size="13.0" />
+               </font></JFXButton>
+            <JFXTextField fx:id="usernameField" depthTest="DISABLE" focusColor="#0091ea" layoutX="104.0" layoutY="43.0" pickOnBounds="false" promptText="Username" unFocusColor="#0091ea">
+               <font>
+                  <Font name="Shree Devanagari 714 Italic" size="13.0" />
+               </font></JFXTextField>
+            <JFXPasswordField fx:id="passwordField" depthTest="DISABLE" focusColor="#0091ea" layoutX="104.0" layoutY="101.0" maxWidth="159.0" minWidth="159.0" pickOnBounds="false" prefHeight="12.0" prefWidth="159.0" promptText="Password" unFocusColor="#0091ea">
+               <font>
+                  <Font name="Shree Devanagari 714 Italic" size="13.0" />
+               </font></JFXPasswordField>
+         </children>
+      </Pane>
+   </children>
+</StackPane>
