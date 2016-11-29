@@ -17,25 +17,27 @@ public class startPageController implements Initializable {
     private JFXButton loginButton;
 
     @FXML
-    private JFXTextField usernameTextField;
+    private JFXTextField usernameField;
 
     @FXML
-    private JFXPasswordField passwordTextField;
+    private JFXPasswordField passwordField;
 
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
         createButton.setOnAction(event -> {
-            //Create User here
-            Salt salt = new Salt();
-            System.out.println(salt.getUniqueString());
-            System.out.println(Hash.getSha512("Hello du kevin", "salt"));
+            Security.Salt salt = new Security.Salt();
+            String uniqueString = salt.getUniqueString();
+            Security.Hash hash = new Security.Hash();
+            System.out.println("Hash: " + hash.getSha512(passwordField.getText(), uniqueString) + "\n" +
+            "Salted With: " + uniqueString);
         });
         loginButton.setOnAction(event -> {
-            //Login User Here
-            Salt salt = new Salt();
-            System.out.println(salt.getUniqueString());
-            System.out.println(Hash.getSha512("Hello du kevin", "saltt"));
+            DataManagement.Manager manager = new DataManagement.Manager();
+            String username = usernameField.getText();
+            String password = passwordField.getText();
+
+            manager.login(username, password);
         });
     }
 }

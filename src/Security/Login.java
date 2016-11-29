@@ -7,24 +7,21 @@ import java.util.*;
  */
 public class Login {
     private String username;
-    private String password;
+    private String givenPassword;
+    private String passwordInDatabase;
+    private String salt;
     private Date loginTime;
 
-    public Login (String username, String password, Date loginTime) {
+    public Login (String username, String givenPassword, String passwordInDatabase, String salt ,Date loginTime) {
         this.username = username;
-        this.password = password;
+        this.givenPassword = givenPassword;
+        this.passwordInDatabase = passwordInDatabase;
+        this.salt = salt;
         this.loginTime = loginTime;
-    }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public Date getLoginTime() {
-        return loginTime;
+        Security.Hash hash = new Security.Hash();
+        if (hash.getSha512(givenPassword, salt).matches(passwordInDatabase)) {
+            System.out.println("Login S U C C");
+        }
     }
 }

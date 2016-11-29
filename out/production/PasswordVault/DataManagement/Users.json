@@ -1,0 +1,10 @@
+{
+	"Fabian":{
+		"password":"c78e84fee8f258c6e57b08c80941323424f82a09ba9dc8d38b7b853f8a800e8fbef30767735455325525c3990f290b311816dd5aacae119013c9542ac697d1a1",
+		"salt": "guplmk9801brgah9gptsoktr3u"
+	},
+	"Paul":{
+		"password":"<sha512 here>",
+		"salt": "<salt here>"
+	}
+}
