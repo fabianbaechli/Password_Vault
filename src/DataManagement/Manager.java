@@ -18,13 +18,13 @@ public class Manager {
         try {
             Iterator<?> keys = obj.keys();
 
-            while(keys.hasNext()) {
-                String key = (String)keys.next();
-                if (obj.get(key) instanceof JSONObject ) {
+            while (keys.hasNext()) {
+                String key = (String) keys.next();
+                System.out.println(key);
+                if (obj.get(key) != null) {
                     if (key.matches(username)) {
-                        String passwordInDatabase = obj.getJSONObject(username).getString("password");
-                        String salt = obj.getJSONObject(username).getString("salt");
-                        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                        String passwordInDatabase = obj.getJSONArray(username).getJSONObject(0).getString("password");
+                        String salt = obj.getJSONArray(username).getJSONObject(1).getString("salt");
                         Date date = new Date();
                         Security.Login login = new Security.Login(username, password, passwordInDatabase, salt, date);
                     }
@@ -33,5 +33,10 @@ public class Manager {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    public Boolean addUser(String username, String password, String salt) {
+        Json json = new Json();
+        return json.addUser(username, password, salt);
     }
 }

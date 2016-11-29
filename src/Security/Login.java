@@ -12,7 +12,7 @@ public class Login {
     private String salt;
     private Date loginTime;
 
-    public Login (String username, String givenPassword, String passwordInDatabase, String salt ,Date loginTime) {
+    public Login(String username, String givenPassword, String passwordInDatabase, String salt, Date loginTime) {
         this.username = username;
         this.givenPassword = givenPassword;
         this.passwordInDatabase = passwordInDatabase;
@@ -21,7 +21,7 @@ public class Login {
 
         Security.Hash hash = new Security.Hash();
         if (hash.getSha512(givenPassword, salt).matches(passwordInDatabase)) {
-            System.out.println("Login S U C C");
+            System.out.println("Login Successful");
         }
     }
 }

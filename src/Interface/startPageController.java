@@ -27,10 +27,16 @@ public class startPageController implements Initializable {
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
         createButton.setOnAction(event -> {
             Security.Salt salt = new Security.Salt();
-            String uniqueString = salt.getUniqueString();
             Security.Hash hash = new Security.Hash();
+
+            String uniqueString = salt.getUniqueString();
+            String hashedPassword = hash.getSha512(passwordField.getText(), uniqueString);
+
             System.out.println("Hash: " + hash.getSha512(passwordField.getText(), uniqueString) + "\n" +
-            "Salted With: " + uniqueString);
+                    "Salted With: " + uniqueString);
+
+            DataManagement.Manager dataManager = new DataManagement.Manager();
+            System.out.println(dataManager.addUser(usernameField.getText(), hashedPassword, uniqueString));
         });
         loginButton.setOnAction(event -> {
             DataManagement.Manager manager = new DataManagement.Manager();

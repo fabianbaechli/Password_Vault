@@ -1,10 +1,1 @@
-{
-	"Fabian":{
-		"password":"c78e84fee8f258c6e57b08c80941323424f82a09ba9dc8d38b7b853f8a800e8fbef30767735455325525c3990f290b311816dd5aacae119013c9542ac697d1a1",
-		"salt": "guplmk9801brgah9gptsoktr3u"
-	},
-	"Paul":{
-		"password":"<sha512 here>",
-		"salt": "<salt here>"
-	}
-}
+{"":[{"password":"a9b937404debf0f4a6f6b32e51c037951c0c8a0a51fdca5f0926a1b172640288b202693f57057471cc450b5d91f0d72248b5820d5eca3dc0e0176df0378492b0"},{"salt":"supk7c54pabkhgs61394144gd5"}],"Fabian":[{"password":"556adab528f3324cbabcb088a69bb934dca2efdb166796edadb350df4278fef3d40aade6016d4becaaa2b015516c89d51dec2edc0d933aec36266f5f69119bfb"},{"salt":"6ni90uavhocoesbusulhh5nu27"}]}
