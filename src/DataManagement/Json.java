@@ -4,17 +4,20 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Iterator;
 
 import org.json.*;
 
 class Json {
+    private String fileLocation = Json.class.getProtectionDomain().getCodeSource().getLocation().getPath()
+            + "/DataManagement/Users.json";
     JSONObject readFile() {
         String jsonData = "";
         JSONObject obj = null;
         BufferedReader br = null;
         try {
             String line;
-            br = new BufferedReader(new FileReader(Json.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "/DataManagement/Users.json"));
+            br = new BufferedReader(new FileReader(fileLocation));
             while ((line = br.readLine()) != null) {
                 jsonData += line + "\n";
             }
@@ -35,6 +38,17 @@ class Json {
     Boolean addUser(String username, String password, String salt) {
         JSONObject obj = readFile();
         try {
+            Iterator<?> keys = obj.keys();
+
+            while (keys.hasNext()) {
+                String key = (String) keys.next();
+                if (obj.get(key) != null) {
+                    if (key.matches(username)) {
+                        System.out.println("User Already Defined");
+                        return false;
+                    }
+                }
+            }
             JSONArray arr = new JSONArray();
 
             JSONObject passwordObject = new JSONObject();
@@ -49,7 +63,7 @@ class Json {
             e.printStackTrace();
             return false;
         }
-        try (FileWriter file = new FileWriter(Json.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "/DataManagement/Users.json")) {
+        try (FileWriter file = new FileWriter(fileLocation)) {
             file.write(obj.toString());
             System.out.println("Successfully Copied JSON Object to File");
         } catch (IOException e) {

@@ -1,5 +1,6 @@
 package Interface;
 
+import java.io.IOException;
 import java.net.*;
 import java.util.*;
 
@@ -7,6 +8,10 @@ import Security.Hash;
 import Security.Salt;
 import javafx.fxml.*;
 import com.jfoenix.controls.*;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class startPageController implements Initializable {
 
@@ -36,14 +41,30 @@ public class startPageController implements Initializable {
                     "Salted With: " + uniqueString);
 
             DataManagement.Manager dataManager = new DataManagement.Manager();
-            System.out.println(dataManager.addUser(usernameField.getText(), hashedPassword, uniqueString));
+            dataManager.addUser(usernameField.getText(), hashedPassword, uniqueString);
         });
         loginButton.setOnAction(event -> {
             DataManagement.Manager manager = new DataManagement.Manager();
             String username = usernameField.getText();
             String password = passwordField.getText();
 
-            manager.login(username, password);
+            if (manager.login(username, password)) {
+                System.out.println("Login Successful");
+                Parent root;
+                try {
+                    root = FXMLLoader.load(startPageController.class.getResource("VaultPage.fxml"));
+                    Stage stage = new Stage();
+                    stage.setTitle("Vault");
+                    stage.setScene(new Scene(root));
+                    stage.show();
+
+                    //hides this current window
+                    ((Node) (event.getSource())).getScene().getWindow().hide();
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         });
     }
 }

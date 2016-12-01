@@ -19,9 +19,12 @@ public class Login {
         this.salt = salt;
         this.loginTime = loginTime;
 
+    }
+    public Boolean logUserIn (){
         Security.Hash hash = new Security.Hash();
         if (hash.getSha512(givenPassword, salt).matches(passwordInDatabase)) {
-            System.out.println("Login Successful");
+            return true;
         }
+        return false;
     }
 }
