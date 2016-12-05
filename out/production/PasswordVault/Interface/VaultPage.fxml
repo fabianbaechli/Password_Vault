@@ -9,8 +9,16 @@
    <children>
       <Pane prefHeight="330.0" prefWidth="535.0">
          <children>
-            <JFXListView fx:id="listView" prefHeight="358.0" prefWidth="137.0" />
             <JFXButton fx:id="newNodeButton" buttonType="RAISED" layoutX="439.0" layoutY="317.0" ripplerFill="WHITE" style="-fx-background-color: #E91E63;" text="New Node" textFill="WHITE" />
+            <JFXPopup fx:id="newNodePopUp" layoutX="126.0" layoutY="105.0" prefHeight="158.0" prefWidth="293.0" style="-fx-background-color: #00BCD4;">
+               <children>
+                  <JFXTextField labelFloat="true">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXTextField>
+               </children>
+            </JFXPopup>
          </children>
       </Pane>
    </children>
