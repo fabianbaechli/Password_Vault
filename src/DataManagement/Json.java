@@ -11,6 +11,7 @@ import org.json.*;
 class Json {
     private String fileLocation = Json.class.getProtectionDomain().getCodeSource().getLocation().getPath()
             + "/DataManagement/Users.json";
+
     JSONObject readFile() {
         String jsonData = "";
         JSONObject obj = null;

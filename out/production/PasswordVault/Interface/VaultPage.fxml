@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import com.jfoenix.validation.*?>
-<?import javafx.scene.control.*?>
 <?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.layout.*?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.VaultPageController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="358.0" prefWidth="535.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.VaultPageController">
    <children>
-      <Pane prefHeight="200.0" prefWidth="200.0">
+      <Pane prefHeight="330.0" prefWidth="535.0">
          <children>
-            <JFXListView layoutX="-1.0" prefHeight="400.0" prefWidth="200.0">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </JFXListView>
+            <JFXListView fx:id="listView" prefHeight="358.0" prefWidth="137.0" />
+            <JFXButton fx:id="newNodeButton" buttonType="RAISED" layoutX="439.0" layoutY="317.0" ripplerFill="WHITE" style="-fx-background-color: #E91E63;" text="New Node" textFill="WHITE" />
          </children>
       </Pane>
    </children>

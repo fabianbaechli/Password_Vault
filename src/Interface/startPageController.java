@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.net.*;
 import java.util.*;
 
-import Security.Hash;
-import Security.Salt;
 import javafx.fxml.*;
 import com.jfoenix.controls.*;
 import javafx.scene.Node;
