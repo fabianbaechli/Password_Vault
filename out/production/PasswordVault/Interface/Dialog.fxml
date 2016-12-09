@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.FlowPane?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Label?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXDialogLayout?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="414.0" prefWidth="490.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.DialogController">
+   <children>
+      <JFXButton fx:id="createNodeButton" buttonType="RAISED" layoutX="215.0" layoutY="353.0" minWidth="60.0" ripplerFill="WHITE" style="-fx-background-color: #E91E63;" text="Create" textFill="WHITE">
+         <font>
+            <Font name="Roboto Light" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXDialog fx:id="dialog" />
+      <JFXTextField fx:id="nameField" labelFloat="true" layoutX="167.0" layoutY="33.0" promptText="Name Of New Entry">
+         <font>
+            <Font name="Shree Devanagari 714 Italic" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="usernameField" labelFloat="true" layoutX="166.0" layoutY="107.0" promptText="Username">
+         <font>
+            <Font name="Shree Devanagari 714 Italic" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="passwordField" depthTest="DISABLE" labelFloat="true" layoutX="165.0" layoutY="191.0" maxWidth="159.0" minWidth="159.0" pickOnBounds="false" prefHeight="12.0" prefWidth="159.0" promptText="Password">
+         <font>
+            <Font name="Shree Devanagari 714 Italic" size="13.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXPasswordField fx:id="retypedPasswordField" depthTest="DISABLE" labelFloat="true" layoutX="165.0" layoutY="275.0" maxWidth="159.0" minWidth="159.0" pickOnBounds="false" prefHeight="12.0" prefWidth="159.0" promptText="Retype Password">
+         <font>
+            <Font name="Shree Devanagari 714 Italic" size="13.0" />
+         </font>
+      </JFXPasswordField>
+   </children>
+</AnchorPane>

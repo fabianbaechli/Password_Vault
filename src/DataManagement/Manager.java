@@ -3,6 +3,8 @@ package DataManagement;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import Security.*;
+
 import java.util.Date;
 import java.util.Iterator;
 
@@ -23,8 +25,8 @@ public class Manager {
                         String passwordInDatabase = obj.getJSONArray(username).getJSONObject(0).getString("password");
                         String salt = obj.getJSONArray(username).getJSONObject(1).getString("salt");
                         Date date = new Date();
-                        Security.Login login = new Security.Login(username, password, passwordInDatabase, salt, date);
-                        if(login.logUserIn()) {
+                        Login login = new Login(username, password, passwordInDatabase, salt, date);
+                        if (login.logUserIn()) {
                             return true;
                         }
                     }
@@ -34,6 +36,10 @@ public class Manager {
             e.printStackTrace();
         }
         return false;
+    }
+
+    public Boolean addNewEntry(String title, String username, String password) {
+        return true;
     }
 
     public Boolean addUser(String username, String password, String salt) {

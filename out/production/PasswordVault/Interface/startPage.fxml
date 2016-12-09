@@ -19,11 +19,11 @@
                <font>
                   <Font name="Roboto Light" size="13.0" />
                </font></JFXButton>
-            <JFXTextField fx:id="usernameField" depthTest="DISABLE" focusColor="#0091ea" layoutX="104.0" layoutY="43.0" pickOnBounds="false" promptText="Username" unFocusColor="#0091ea">
+            <JFXTextField fx:id="usernameField" depthTest="DISABLE" focusColor="#0091ea" labelFloat="true" layoutX="104.0" layoutY="43.0" pickOnBounds="false" promptText="Username" unFocusColor="#0091ea">
                <font>
                   <Font name="Shree Devanagari 714 Italic" size="13.0" />
                </font></JFXTextField>
-            <JFXPasswordField fx:id="passwordField" depthTest="DISABLE" focusColor="#0091ea" layoutX="104.0" layoutY="101.0" maxWidth="159.0" minWidth="159.0" pickOnBounds="false" prefHeight="12.0" prefWidth="159.0" promptText="Password" unFocusColor="#0091ea">
+            <JFXPasswordField fx:id="passwordField" depthTest="DISABLE" focusColor="#0091ea" labelFloat="true" layoutX="104.0" layoutY="101.0" maxWidth="159.0" minWidth="159.0" pickOnBounds="false" prefHeight="12.0" prefWidth="159.0" promptText="Password" unFocusColor="#0091ea">
                <font>
                   <Font name="Shree Devanagari 714 Italic" size="13.0" />
                </font></JFXPasswordField>

@@ -1,25 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.StackPane?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="358.0" prefWidth="535.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.VaultPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="431.0" prefWidth="661.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.VaultPageController">
    <children>
-      <Pane prefHeight="330.0" prefWidth="535.0">
-         <children>
-            <JFXButton fx:id="newNodeButton" buttonType="RAISED" layoutX="439.0" layoutY="317.0" ripplerFill="WHITE" style="-fx-background-color: #E91E63;" text="New Node" textFill="WHITE" />
-            <JFXPopup fx:id="newNodePopUp" layoutX="126.0" layoutY="105.0" prefHeight="158.0" prefWidth="293.0" style="-fx-background-color: #00BCD4;">
-               <children>
-                  <JFXTextField labelFloat="true">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                  </JFXTextField>
-               </children>
-            </JFXPopup>
-         </children>
-      </Pane>
+      <JFXButton fx:id="newNodeButton" buttonType="RAISED" layoutX="565.0" layoutY="390.0" ripplerFill="WHITE" style="-fx-background-color: #E91E63;" text="New Entry" textFill="WHITE" />
+      <JFXListView fx:id="listView" prefHeight="431.0" prefWidth="178.0" />
    </children>
-</StackPane>
+</AnchorPane>

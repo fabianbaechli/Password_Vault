@@ -1,1 +1,8 @@
-{"":[{"password":"74b46d66fa1ac8dd95b9ecacc2d7e0bd86dc730c2738a221f8f05ce5934436bf1b72c85a91ea2c3c174db1897ec34f897896230be7d77110a11ead7e7f132914"},{"salt":"avagjg241ro4cfdq9qaf1blvko"}],"Fabrice":[{"password":"45ca1d02974115a3f65cfc2ae3d7f4ca32ee2d72b74b3822b1d0d0e22faa309ee0a16a01b65e07f1c685244f99957ce071c20389708cd4a606d6aca066d654f8"},{"salt":"r2sr7cfcrp6bjgrorce6mm5aof"}],"Fabian":[{"password":"d4a0ea63cbbcd8e10129d95851f2f19ff4149d59c134c3a5c93f13e6528d935750d78df44652d2261f9a62c431eca945ba62cd5e9b2a25d80add4e4dd2ded2ad"},{"salt":"2mfu0hvm0irm87k6coa5coq16a"}]}
+{
+  "":[
+    {"password":"74b46d66fa1ac8dd95b9ecacc2d7e0bd86dc730c2738a221f8f05ce5934436bf1b72c85a91ea2c3c174db1897ec34f897896230be7d77110a11ead7e7f132914"},
+    {"salt":"avagjg241ro4cfdq9qaf1blvko"}],
+  "Fabian":[
+    {"password":"d4a0ea63cbbcd8e10129d95851f2f19ff4149d59c134c3a5c93f13e6528d935750d78df44652d2261f9a62c431eca945ba62cd5e9b2a25d80add4e4dd2ded2ad"},
+    {"salt":"2mfu0hvm0irm87k6coa5coq16a"}]
+}

@@ -1,6 +1,7 @@
 package Security;
 
 import java.util.*;
+import Security.*;
 
 /**
  * Created by Fabian on 28.11.16.
@@ -21,10 +22,7 @@ public class Login {
 
     }
     public Boolean logUserIn (){
-        Security.Hash hash = new Security.Hash();
-        if (hash.getSha512(givenPassword, salt).matches(passwordInDatabase)) {
-            return true;
-        }
-        return false;
+        Hash hash = new Hash();
+        return hash.getSha512(givenPassword, salt).matches(passwordInDatabase);
     }
 }

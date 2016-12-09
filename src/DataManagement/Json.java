@@ -40,7 +40,6 @@ class Json {
         JSONObject obj = readFile();
         try {
             Iterator<?> keys = obj.keys();
-
             while (keys.hasNext()) {
                 String key = (String) keys.next();
                 if (obj.get(key) != null) {
