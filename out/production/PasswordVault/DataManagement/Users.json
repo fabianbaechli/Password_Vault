@@ -1,18 +1,10 @@
 {
   "": [
     {
-      "password": "8df61576947585b73fe276d0c285cbcf5199d8b6e367357ee9c427a3b5a831237045ec8c9430500197f9a8bb0fad431887dc7972d0de8b058b09b1f542cd1721"
+      "password": "f60dc7fc2ec46cc09794ce5364e230d508253456b2ab9b51e7e5754db9a1fd12f2f4cd7a5802eb6145de824c6458e9351858c233b675da0719ccc7e0211c047f"
     },
     {
-      "salt": "9177bs3v5irvde7o0pq3249ja9"
-    }
-  ],
-  "Fabian": [
-    {
-      "password": "5e515a63483da21cf630a964703725e756042fb85a8117e904554f5e4c8d12ec8aaf797055653f8fe25bf8a49582bd1c9c232bf1e5a4469caf1221820e2ca321"
-    },
-    {
-      "salt": "b8tstvvpt4nnqnjum7ulq4akbi"
+      "salt": "ne1aacgtba66fm9g5l7hd7jt51"
     }
   ]
 }

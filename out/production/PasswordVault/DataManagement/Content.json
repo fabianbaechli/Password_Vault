@@ -1,29 +1,15 @@
 {
   "": [
     {
-      "password": "Test Password",
-      "title": "Your First Entry",
-      "username": ""
-    }
-  ],
-  "Fabian": [
-    {
-      "password": "Test Password",
-      "title": "Your First Entry",
-      "username": "Fabian"
+      "password": "79a62e66ac6387dc",
+      "title": "45eddb171b1ab487",
+      "username": "e3b0c44298fc1c14"
     },
     [
       {
-        "password": "abc123",
-        "title": "Entry1",
-        "username": "Fabian_Baechli"
-      }
-    ],
-    [
-      {
-        "password": "123",
-        "title": "Entry2",
-        "username": "Fabian.baechli"
+        "password": "fZ8I18MjPKaZCNfj168W4w==",
+        "title": "t3bpA1T2lSTaV09V+eDbCw==",
+        "username": "BAK7boq1G8wuOaopS0vdkg=="
       }
     ]
   ]

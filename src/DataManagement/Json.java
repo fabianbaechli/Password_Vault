@@ -6,7 +6,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
 
+import Security.Encryption;
 import org.json.*;
+import Security.*;
 
 class Json {
     private String userFileLocation = Json.class.getProtectionDomain().getCodeSource().getLocation().getPath()
@@ -68,10 +70,14 @@ class Json {
 
             JSONArray contentArray = new JSONArray();
             JSONObject content = new JSONObject();
+            Hash hash = new Hash();
+            String firstPassword = hash.getSha256("Test Password").substring(0, 16);
+            String firstTitle = hash.getSha256("My First Entry").substring(0, 16);
+            String firstUsername = hash.getSha256(username).substring(0, 16);
 
-            content.put("title", "Your First Entry");
-            content.put("username", username);
-            content.put("password", "Test Password");
+            content.put("title", firstTitle);
+            content.put("username", firstUsername);
+            content.put("password", firstPassword);
 
             contentArray.put(content);
             contentObject.put(username, contentArray);
@@ -85,7 +91,7 @@ class Json {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        try (FileWriter contentFile = new FileWriter(contentFileLocation)){
+        try (FileWriter contentFile = new FileWriter(contentFileLocation)) {
             contentFile.write(contentObject.toString());
             System.out.println("Created Content Object for User");
         } catch (IOException e) {
@@ -95,19 +101,24 @@ class Json {
         return true;
     }
 
-    Boolean addContent(String title, String username, String password, String mainUsername) {
+    Boolean addContent(String title, String username, String password, String mainUsername, String mainPassword) {
         JSONObject obj = readFile(contentFileLocation);
         try {
             Iterator<?> keys = obj.keys();
             while (keys.hasNext()) {
                 String key = (String) keys.next();
                 if (obj.get(key) != null && key.matches(mainUsername)) {
+                    Encryption encryption = new Encryption();
                     JSONArray arr = new JSONArray();
                     JSONObject content = new JSONObject();
-
-                    content.put("title", title);
-                    content.put("username", username);
-                    content.put("password", password);
+                    Hash hash = new Hash();
+                    String keyword = hash.getSha256(mainPassword).substring(0, 16);
+                    String encryptedTitle = encryption.cipher(true, keyword, title);
+                    String encryptedusername = encryption.cipher(true, keyword, username);
+                    String encryptedpassword = encryption.cipher(true, keyword, password);
+                    content.put("title", encryptedTitle);
+                    content.put("username", encryptedusername);
+                    content.put("password", encryptedpassword);
 
                     arr.put(content);
                     obj.append(mainUsername, arr);

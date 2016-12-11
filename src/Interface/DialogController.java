@@ -39,7 +39,7 @@ public class DialogController implements Initializable {
                     !passwordField.getText().equals("")) &&
                     passwordField.getText().equals(retypedPasswordField.getText())) {
                 Manager manager = new Manager();
-                if(manager.addNewEntry(nameField.getText(), usernameField.getText(), passwordField.getText(), Login.getUsername())) {
+                if(manager.addNewEntry(nameField.getText(), usernameField.getText(), passwordField.getText(), Login.getUsername(), Login.getGivenPassword())) {
                     createNodeButton.getScene().getWindow().hide();
                 }
             } else {

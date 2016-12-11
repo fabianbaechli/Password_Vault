@@ -44,9 +44,9 @@ public class Manager {
         return false;
     }
 
-    public Boolean addNewEntry(String title, String username, String password, String mainUsername) {
+    public Boolean addNewEntry(String title, String username, String password, String mainUsername, String mainPassword) {
         Json json = new Json();
-        return json.addContent(title, username, password, mainUsername);
+        return json.addContent(title, username, password, mainUsername, mainPassword);
     }
 
     public Boolean addUser(String username, String password, String salt) {
