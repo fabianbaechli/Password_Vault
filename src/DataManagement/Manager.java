@@ -12,9 +12,15 @@ import java.util.Iterator;
  * Created by Fabian on 29.11.16.
  */
 public class Manager {
+
+    private String loginLocation = Manager.class.getProtectionDomain().getCodeSource().getLocation().getPath()
+            + "/DataManagement/Users.json";
+    private String dataLocation = Manager.class.getProtectionDomain().getCodeSource().getLocation().getPath()
+            + "/DataManagement/Data.json";
+
     public Boolean login(String username, String password) {
         Json json = new Json();
-        JSONObject obj = json.readFile();
+        JSONObject obj = json.readFile(loginLocation);
         try {
             Iterator<?> keys = obj.keys();
 
@@ -38,8 +44,9 @@ public class Manager {
         return false;
     }
 
-    public Boolean addNewEntry(String title, String username, String password) {
-        return true;
+    public Boolean addNewEntry(String title, String username, String password, String mainUsername) {
+        Json json = new Json();
+        return json.addContent(title, username, password, mainUsername);
     }
 
     public Boolean addUser(String username, String password, String salt) {

@@ -1,0 +1,30 @@
+{
+  "": [
+    {
+      "password": "Test Password",
+      "title": "Your First Entry",
+      "username": ""
+    }
+  ],
+  "Fabian": [
+    {
+      "password": "Test Password",
+      "title": "Your First Entry",
+      "username": "Fabian"
+    },
+    [
+      {
+        "password": "abc123",
+        "title": "Entry1",
+        "username": "Fabian_Baechli"
+      }
+    ],
+    [
+      {
+        "password": "123",
+        "title": "Entry2",
+        "username": "Fabian.baechli"
+      }
+    ]
+  ]
+}

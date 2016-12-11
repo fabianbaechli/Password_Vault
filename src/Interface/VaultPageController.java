@@ -17,9 +17,11 @@ import java.util.ResourceBundle;
 
 public class VaultPageController implements Initializable {
 
-    @FXML JFXButton newNodeButton;
+    @FXML
+    JFXButton newNodeButton;
 
-    @FXML JFXListView<Label> listView;
+    @FXML
+    JFXListView<Label> listView;
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {

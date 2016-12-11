@@ -1,5 +1,6 @@
 package Interface;
 
+import Security.Login;
 import com.jfoenix.controls.*;
 import javafx.fxml.*;
 import javafx.scene.layout.StackPane;
@@ -38,11 +39,11 @@ public class DialogController implements Initializable {
                     !passwordField.getText().equals("")) &&
                     passwordField.getText().equals(retypedPasswordField.getText())) {
                 Manager manager = new Manager();
-                if(manager.addNewEntry(nameField.getText(), usernameField.getText(), passwordField.getText())) {
-                    System.out.println("Created New Entry");
+                if(manager.addNewEntry(nameField.getText(), usernameField.getText(), passwordField.getText(), Login.getUsername())) {
+                    createNodeButton.getScene().getWindow().hide();
                 }
             } else {
-                System.out.println("Fields not correct filled");
+                System.out.println("Fields not correct filled-in");
             }
         });
     }
