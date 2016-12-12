@@ -29,8 +29,12 @@ public class VaultPageController implements Initializable {
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
         Manager manager = new Manager();
         ArrayList content = manager.getContent();
-        for (int i = 0; i < content.size(); i++) {
-            System.out.println(content.get(i));
+        System.out.println(content);
+        for (Object aContent : content) {
+            if (aContent.toString().startsWith("title")) {
+                Label label = new Label(aContent.toString());
+                listView.getItems().add(label);
+            }
         }
         newNodeButton.setOnAction(event -> {
             Parent root;

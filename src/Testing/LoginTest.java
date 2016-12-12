@@ -27,7 +27,7 @@ public class LoginTest {
     public void TestLogin3() {
         System.out.println("Check if given User is created and is in JSON:");
         String unique = salt.getUniqueString();
-        manager.addUser("Bambuga", hash.getSha512("PasswortSafe", unique), unique);
+        manager.addUser("Bambuga", hash.getSha512("PasswortSafe", unique), unique, "PasswortSafe");
         Assert.assertTrue(manager.login("Bambuga", "PasswortSafe"));
     }
 }

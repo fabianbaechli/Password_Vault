@@ -13,13 +13,13 @@ public class SaltTest {
 
     @Test
     public void TestSalt1() {
-        System.out.println("Check if Salt is 26 Characters:");
+        System.out.println("Check if Salt is 26 Characters long:");
         Assert.assertTrue(salt.getUniqueString().length() == 26);
     }
 
     @Test
     public void TestSalt2() {
-        System.out.println("Check that salt isnt null:");
+        System.out.println("Check that salt isn't null:");
         Assert.assertNotNull(salt.getUniqueString());
     }
 }

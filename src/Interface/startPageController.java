@@ -38,7 +38,7 @@ public class startPageController implements Initializable {
                     "Salted With: " + uniqueString);
 
             Manager dataManager = new Manager();
-            dataManager.addUser(usernameField.getText(), hashedPassword, uniqueString);
+            dataManager.addUser(usernameField.getText(), hashedPassword, uniqueString, passwordField.getText());
         });
         loginButton.setOnAction(event -> {
             Manager manager = new Manager();
