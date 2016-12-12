@@ -14,9 +14,6 @@ public class Manager {
     private String loginLocation = Manager.class.getProtectionDomain().getCodeSource().getLocation().getPath()
             + "/DataManagement/Users.json";
 
-    private String contentLocation = Manager.class.getProtectionDomain().getCodeSource().getLocation().getPath()
-            + "/DataManagement/Content.json";
-
     public Boolean login(String username, String password) {
         Json json = new Json();
         JSONObject obj = json.readFile(loginLocation);
@@ -47,9 +44,9 @@ public class Manager {
         return json.addContent(title, username, password, Login.getUsername(), Login.getGivenPassword());
     }
 
-    public Boolean addUser(String username, String password, String salt) {
+    public Boolean addUser(String username, String password, String salt, String mainPassword) {
         Json json = new Json();
-        return json.addUser(username, password, salt);
+        return json.addUser(username, password, salt, mainPassword);
     }
     public ArrayList getContent() {
         Json json = new Json();

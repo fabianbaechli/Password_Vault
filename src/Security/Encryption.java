@@ -44,7 +44,6 @@ public class Encryption {
 
     public String cipher(Boolean encrypt, String key, String message) {
         String initVector = "RandomInitVector"; // 16 bytes IV
-
         if (encrypt) {
             return encrypt(key, initVector, message);
         } else {

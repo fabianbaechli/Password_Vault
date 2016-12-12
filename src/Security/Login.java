@@ -2,9 +2,6 @@ package Security;
 
 import java.util.*;
 
-/**
- * Created by Fabian on 28.11.16.
- */
 public class Login {
     private static String username;
     private static String givenPassword;
