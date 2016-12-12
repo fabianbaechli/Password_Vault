@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import Security.Encryption;
@@ -97,7 +98,6 @@ class Json {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return true;
     }
 
@@ -135,5 +135,41 @@ class Json {
             e.printStackTrace();
         }
         return true;
+    }
+
+    ArrayList getContent() {
+        Json json = new Json();
+        JSONObject obj = json.readFile(contentFileLocation);
+        ArrayList<String> returnList = new ArrayList<>();
+        try {
+            Iterator<?> keys = obj.keys();
+
+            while (keys.hasNext()) {
+                String key = (String) keys.next();
+                if (obj.get(key) != null && key.equals(Login.getUsername())) {
+                    JSONArray temp = obj.getJSONArray(key);
+                    for (int i = 0; i < temp.length(); i++) {
+                        String username = temp.getJSONObject(0).getString("username");
+                        String password = temp.getJSONObject(0).getString("password");
+                        String title = temp.getJSONObject(0).getString("title");
+
+                        Hash hash = new Hash();
+                        Encryption encryption = new Encryption();
+                        String keyword = hash.getSha256(Login.getGivenPassword()).substring(0, 16);
+
+                        username = encryption.cipher(false, keyword, username);
+                        password = encryption.cipher(false, keyword, password);
+                        title = encryption.cipher(false, keyword, title);
+
+                        returnList.add("username: " + username);
+                        returnList.add("password: " + password);
+                        returnList.add("title: " + title);
+                    }
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return returnList;
     }
 }

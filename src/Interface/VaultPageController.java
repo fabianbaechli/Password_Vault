@@ -1,5 +1,6 @@
 package Interface;
 
+import DataManagement.Manager;
 import com.jfoenix.controls.*;
 import javafx.fxml.*;
 import javafx.scene.Parent;
@@ -9,6 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 /**
@@ -25,6 +27,11 @@ public class VaultPageController implements Initializable {
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
+        Manager manager = new Manager();
+        ArrayList content = manager.getContent();
+        for (int i = 0; i < content.size(); i++) {
+            System.out.println(content.get(i));
+        }
         newNodeButton.setOnAction(event -> {
             Parent root;
             try {
@@ -37,7 +44,6 @@ public class VaultPageController implements Initializable {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         });
     }
 }

@@ -1,12 +1,11 @@
 package Security;
 
 //Included in External Library
-import org.apache.commons.codec.binary.Base64;
 
+import org.apache.commons.codec.binary.Base64;
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
-import java.security.MessageDigest;
 
 public class Encryption {
     private static String encrypt(String key, String initVector, String value) {

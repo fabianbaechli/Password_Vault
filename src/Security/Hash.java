@@ -4,9 +4,6 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/**
- * Created by Fabian on 28.11.16.
- */
 public class Hash {
     public String getSha512(String passwordToHash, String salt) {
         String generatedPassword = null;

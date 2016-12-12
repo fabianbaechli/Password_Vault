@@ -5,18 +5,17 @@ import org.json.JSONObject;
 
 import Security.*;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 
-/**
- * Created by Fabian on 29.11.16.
- */
 public class Manager {
 
     private String loginLocation = Manager.class.getProtectionDomain().getCodeSource().getLocation().getPath()
             + "/DataManagement/Users.json";
-    private String dataLocation = Manager.class.getProtectionDomain().getCodeSource().getLocation().getPath()
-            + "/DataManagement/Data.json";
+
+    private String contentLocation = Manager.class.getProtectionDomain().getCodeSource().getLocation().getPath()
+            + "/DataManagement/Content.json";
 
     public Boolean login(String username, String password) {
         Json json = new Json();
@@ -26,16 +25,15 @@ public class Manager {
 
             while (keys.hasNext()) {
                 String key = (String) keys.next();
-                if (obj.get(key) != null) {
-                    if (key.matches(username)) {
-                        String passwordInDatabase = obj.getJSONArray(username).getJSONObject(0).getString("password");
-                        String salt = obj.getJSONArray(username).getJSONObject(1).getString("salt");
-                        Date date = new Date();
-                        Login login = new Login(username, password, passwordInDatabase, salt, date);
-                        if (login.logUserIn()) {
-                            return true;
-                        }
+                if (obj.get(key) != null && key.matches(username)) {
+                    String passwordInDatabase = obj.getJSONArray(username).getJSONObject(0).getString("password");
+                    String salt = obj.getJSONArray(username).getJSONObject(1).getString("salt");
+                    Date date = new Date();
+                    Login login = new Login(username, password, passwordInDatabase, salt, date);
+                    if (login.logUserIn()) {
+                        return true;
                     }
+
                 }
             }
         } catch (JSONException e) {
@@ -44,13 +42,17 @@ public class Manager {
         return false;
     }
 
-    public Boolean addNewEntry(String title, String username, String password, String mainUsername, String mainPassword) {
+    public Boolean addNewEntry(String title, String username, String password) {
         Json json = new Json();
-        return json.addContent(title, username, password, mainUsername, mainPassword);
+        return json.addContent(title, username, password, Login.getUsername(), Login.getGivenPassword());
     }
 
     public Boolean addUser(String username, String password, String salt) {
         Json json = new Json();
         return json.addUser(username, password, salt);
+    }
+    public ArrayList getContent() {
+        Json json = new Json();
+        return json.getContent();
     }
 }
