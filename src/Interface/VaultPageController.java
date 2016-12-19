@@ -3,8 +3,7 @@ package Interface;
 import DataManagement.Manager;
 import com.jfoenix.controls.*;
 import javafx.fxml.*;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.scene.*;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -13,7 +12,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-
 import java.awt.datatransfer.*;
 import java.awt.Toolkit;
 
@@ -48,23 +46,7 @@ public class VaultPageController implements Initializable {
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
-        groundPane.setOnMouseEntered(event -> {
-
-            listView.getItems().removeAll(listView.getItems());
-            Manager manager = new Manager();
-            content = manager.getContent();
-            System.out.println("refreshed side panel content");
-            for (Object aContent : content) {
-                if (aContent.toString().startsWith("title")) {
-                    Label label = new Label(aContent.toString().replace("title: ", ""));
-                    listView.getItems().add(label);
-
-                    label.setOnMouseClicked(labelClick -> drawContent(label));
-                }
-            }
-
-        });
-
+        updateSidePane();
         newNodeButton.setOnAction(event -> {
             Parent root;
             try {
@@ -103,6 +85,21 @@ public class VaultPageController implements Initializable {
                     textToClipBoard.setContents(stringSelection, null);
                 });
                 return;
+            }
+        }
+    }
+
+    private void updateSidePane() {
+        listView.getItems().removeAll(listView.getItems());
+        Manager manager = new Manager();
+        content = manager.getContent();
+        System.out.println("refreshed side panel content");
+        for (Object aContent : content) {
+            if (aContent.toString().startsWith("title")) {
+                Label label = new Label(aContent.toString().replace("title: ", ""));
+                listView.getItems().add(label);
+
+                label.setOnMouseClicked(labelClick -> drawContent(label));
             }
         }
     }
