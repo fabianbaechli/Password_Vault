@@ -59,9 +59,7 @@ public class VaultPageController implements Initializable {
                     Label label = new Label(aContent.toString().replace("title: ", ""));
                     listView.getItems().add(label);
 
-                    label.setOnMouseClicked(labelClick -> {
-                        drawContent(label);
-                    });
+                    label.setOnMouseClicked(labelClick -> drawContent(label));
                 }
             }
 
@@ -84,7 +82,6 @@ public class VaultPageController implements Initializable {
 
     private void drawContent(Label titleLabel) {
         textToClipboard.setVisible(true);
-
         titleField.setVisible(true);
         usernameField.setVisible(true);
         passwordField.setVisible(true);

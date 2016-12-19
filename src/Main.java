@@ -16,7 +16,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            StackPane page = FXMLLoader.load(Main.class.getResource("interface/startPage.fxml"));
+            StackPane page = FXMLLoader.load(Main.class.getResource("/interface/startPage.fxml"));
             Scene scene = new Scene(page);
             primaryStage.setScene(scene);
             primaryStage.setTitle("Login");
