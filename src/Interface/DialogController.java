@@ -1,6 +1,7 @@
 package Interface;
 
 import Security.Login;
+import Security.Salt;
 import com.jfoenix.controls.*;
 import javafx.fxml.*;
 import javafx.scene.layout.StackPane;
@@ -30,6 +31,8 @@ public class DialogController implements Initializable {
 
     @FXML private JFXDialog dialog;
 
+    @FXML private JFXButton generatePw;
+
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
 
@@ -45,6 +48,13 @@ public class DialogController implements Initializable {
             } else {
                 System.out.println("Fields not correct filled-in");
             }
+        });
+
+        generatePw.setOnMouseClicked(event -> {
+            Salt salt = new Salt();
+            String uniqueString = salt.getUniqueString();
+            passwordField.setText(uniqueString);
+            retypedPasswordField.setText(uniqueString);
         });
     }
 }

@@ -21,7 +21,6 @@ public class Encryption {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
         return null;
     }
 

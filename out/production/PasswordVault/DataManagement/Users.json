@@ -15,6 +15,14 @@
       "salt": "9v0vqtfup6rlqr7qcin2qds1kc"
     }
   ],
+  "Leonard": [
+    {
+      "password": "0f6acb80cecfd2aa6f56ddbd9bf463302c1682b9e75dc9b6f31d97b1886f9f8078daf52593071d53a6b0c7f7a19cbaab5a2e8561e2e7ddfeea40afe4b77909bb"
+    },
+    {
+      "salt": "nofon72klitb34k77ieermruhf"
+    }
+  ],
   "Susanna": [
     {
       "password": "bfb23961f1903f1e866e73072934647c067f8ece3bc78eb93397cb2e338e369d11293cc9944353478f62dc155c35afdc5ec9ab1d06928eec11926103b2efd99b"
