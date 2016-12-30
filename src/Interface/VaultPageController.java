@@ -46,13 +46,12 @@ public class VaultPageController implements Initializable {
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
-        updateSidePane();
         newNodeButton.setOnAction(event -> {
             Parent root;
             try {
                 root = FXMLLoader.load(startPageController.class.getResource("Dialog.fxml"));
                 Stage stage = new Stage();
-                stage.setTitle("Vault");
+                stage.setTitle("New Node");
                 stage.setScene(new Scene(root));
                 stage.show();
 
@@ -88,19 +87,20 @@ public class VaultPageController implements Initializable {
             }
         }
     }
+    void setStageAndSetupListeners (Stage stage) {
+        stage.focusedProperty().addListener((ov, t, t1) -> {
+            listView.getItems().removeAll(listView.getItems());
+            Manager manager = new Manager();
+            content = manager.getContent();
+            System.out.println("refreshed side panel content");
+            for (Object aContent : content) {
+                if (aContent.toString().startsWith("title")) {
+                    Label label = new Label(aContent.toString().replace("title: ", ""));
+                    listView.getItems().add(label);
 
-    private void updateSidePane() {
-        listView.getItems().removeAll(listView.getItems());
-        Manager manager = new Manager();
-        content = manager.getContent();
-        System.out.println("refreshed side panel content");
-        for (Object aContent : content) {
-            if (aContent.toString().startsWith("title")) {
-                Label label = new Label(aContent.toString().replace("title: ", ""));
-                listView.getItems().add(label);
-
-                label.setOnMouseClicked(labelClick -> drawContent(label));
+                    label.setOnMouseClicked(labelClick -> drawContent(label));
+                }
             }
-        }
+        });
     }
 }

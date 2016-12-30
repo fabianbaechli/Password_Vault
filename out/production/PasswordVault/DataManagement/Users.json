@@ -7,6 +7,14 @@
       "salt": "o83l7q5urrejjmfpjr8mn7atts"
     }
   ],
+  "Tobias": [
+    {
+      "password": "d8b29bef8aecaac6f73bf2f0e96826784ef868ce10df0e0895925d9c4f76070ca0cc23bfa10f134d62ea1255afd277b07f52852d55553d78d6449a1aad16b70c"
+    },
+    {
+      "salt": "s9acm1bmv7jkrft2sgni4rea9h"
+    }
+  ],
   "Fabian": [
     {
       "password": "b19d11987b5941681ab223ae68037f8c1eab75380100761ba09f0cd701215b44ad2da598d86d4533e22a06c89284d9c83ae11b4dc918aeeb3f986cbbb1b21164"
@@ -21,6 +29,14 @@
     },
     {
       "salt": "nofon72klitb34k77ieermruhf"
+    }
+  ],
+  "TestUser": [
+    {
+      "password": "42ea6378bb9cde04c7640390ae143dbda610b8a172a61aa5b250d54d6a7da812c94d7783a7182eb16ef7717b35e40644089eca3ca3a16f637b615f348c8b13d3"
+    },
+    {
+      "salt": "u2fv3v8t707e6v9f3e1hr72479"
     }
   ],
   "Susanna": [
