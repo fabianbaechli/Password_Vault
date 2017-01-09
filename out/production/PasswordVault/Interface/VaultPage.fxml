@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
@@ -9,9 +10,25 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.StackPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="431.0" prefWidth="661.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.VaultPageController">
+<AnchorPane fx:id="groundPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="431.0" prefWidth="661.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.VaultPageController">
    <children>
       <JFXButton fx:id="newNodeButton" buttonType="RAISED" layoutX="565.0" layoutY="390.0" ripplerFill="WHITE" style="-fx-background-color: #E91E63;" text="New Entry" textFill="WHITE" />
       <JFXListView fx:id="listView" prefHeight="431.0" prefWidth="178.0" />
+      <JFXTextField fx:id="titleField" editable="false" labelFloat="true" layoutX="331.0" layoutY="89.0" maxWidth="195.0" minWidth="178.0" prefHeight="27.0" prefWidth="178.0" promptText="Title">
+         <font>
+            <Font name="Shree Devanagari 714 Italic" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="usernameField" editable="false" labelFloat="true" layoutX="331.0" layoutY="152.0" maxWidth="195.0" minWidth="178.0" prefHeight="27.0" prefWidth="178.0" promptText="Username">
+         <font>
+            <Font name="Shree Devanagari 714 Italic" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="passwordField" editable="false" labelFloat="true" layoutX="337.0" layoutY="217.0" promptText="Password">
+         <font>
+            <Font name="Shree Devanagari 714 Italic" size="13.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXButton fx:id="textToClipboard" buttonType="RAISED" layoutX="469.0" layoutY="390.0" prefWidth="81.0" ripplerFill="WHITE" style="-fx-background-color: #E91E63;" text="Copy PW" textFill="WHITE" visible="false" />
    </children>
 </AnchorPane>

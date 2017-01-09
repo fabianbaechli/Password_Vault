@@ -5,7 +5,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class Hash {
-    public String getSha512(String passwordToHash, String salt) {
+        public String getSha512(String passwordToHash, String salt) {
         String generatedPassword = null;
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-512");

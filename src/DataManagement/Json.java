@@ -17,7 +17,7 @@ class Json {
     private String contentFileLocation = Json.class.getProtectionDomain().getCodeSource().getLocation().getPath()
             + "/DataManagement/Content.json";
 
-    public JSONObject readFile(String path) {
+    JSONObject readFile(String path) {
         String jsonData = "";
         JSONObject obj = null;
         BufferedReader br = null;
@@ -155,9 +155,18 @@ class Json {
                 if (obj.get(key) != null && key.equals(Login.getUsername())) {
                     JSONArray temp = obj.getJSONArray(key);
                     for (int i = 0; i < temp.length(); i++) {
-                        String username = temp.getJSONObject(i).getString("username");
-                        String password = temp.getJSONObject(i).getString("password");
-                        String title = temp.getJSONObject(i).getString("title");
+                        String password;
+                        String username;
+                        String title;
+                        if (i < 1) {
+                            password = temp.getJSONObject(i).getString("password");
+                            title = temp.getJSONObject(i).getString("title");
+                            username = temp.getJSONObject(i).getString("username");
+                        } else {
+                            password = temp.getJSONArray(i).getJSONObject(0).getString("password");
+                            title = temp.getJSONArray(i).getJSONObject(0).getString("title");
+                            username = temp.getJSONArray(i).getJSONObject(0).getString("username");
+                        }
 
                         Hash hash = new Hash();
                         Encryption encryption = new Encryption();
