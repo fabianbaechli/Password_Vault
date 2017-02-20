@@ -11,16 +11,16 @@ public class LoginTest {
     private Hash hash = new Hash();
     private Salt salt = new Salt();
 
-    @Test //User is already in JSON File
+    @Test
     public void TestLogin1() {
         System.out.println("Check if Method isnt null:");
-        Assert.assertNotNull(manager.login("Fabrice", "TestPassword"));
+        Assert.assertNotNull(manager.login("", ""));
     }
 
-    @Test
+    @Test //User is already in JSON File
     public void TestLogin2() {
         System.out.println("Check if old User example is still in JSON:");
-        Assert.assertTrue(manager.login("Fabrice", "TestPasswort"));
+        Assert.assertTrue(manager.login("", ""));
     }
 
     @Test
