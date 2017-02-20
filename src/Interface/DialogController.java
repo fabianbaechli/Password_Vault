@@ -57,7 +57,7 @@ public class DialogController implements Initializable {
 
         generatePw.setOnMouseClicked(event -> {
             Salt salt = new Salt();
-            String uniqueString = salt.getUniqueString();
+            String uniqueString = salt.getUniqueString().substring(0, 10);
             passwordField.setText(uniqueString);
             retypedPasswordField.setText(uniqueString);
         });

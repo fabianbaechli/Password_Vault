@@ -7,9 +7,9 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class LoginTest {
-    Manager manager = new Manager();
-    Hash hash = new Hash();
-    Salt salt = new Salt();
+    private Manager manager = new Manager();
+    private Hash hash = new Hash();
+    private Salt salt = new Salt();
 
     @Test //User is already in JSON File
     public void TestLogin1() {

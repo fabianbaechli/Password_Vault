@@ -4,12 +4,9 @@ package Testing;
 import Security.Salt;
 import org.junit.Assert;
 import org.junit.Test;
-import java.security.SecureRandom;
-
 
 public class SaltTest {
-    Salt salt = new Salt();
-    SecureRandom random = new SecureRandom();
+    private Salt salt = new Salt();
 
     @Test
     public void TestSalt1() {

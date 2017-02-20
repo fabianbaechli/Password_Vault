@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class HashTest {
-    Hash hash = new Hash();
+    private Hash hash = new Hash();
 
     @Test
     public void TestHash1(){
@@ -18,4 +18,5 @@ public class HashTest {
         System.out.println("Check that Hash isnt null:");
         Assert.assertNotNull(hash.getSha512("Test","12345678912345678912345678"));
     }
+
 }
