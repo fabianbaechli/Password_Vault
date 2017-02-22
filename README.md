@@ -1,5 +1,5 @@
-Program to store and manage passwords for multiple users in a material designed GUI \n
-Main password is secured via SHA-512 \n
+Program to store and manage passwords for multiple users in a material designed GUI
+Main password is secured via SHA-512
 Login Page
 ![Alt text](/Docu/login_page.png?raw=true "Login Page")
 Main Page
